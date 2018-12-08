@@ -1,0 +1,11 @@
+---
+- name: Provision prudential dev server on AWS
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+          - infra/vars/ec2.yml
+          - infra/vars/securityGroups.yml
+  tasks:
+          - include: infra/tasks/securityGroups.yml
+          - include: infra/tasks/devServer.yml  

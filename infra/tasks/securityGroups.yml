@@ -6,7 +6,7 @@
           region: "{{ vpc_region }}"
           vpc_id: vpc-02c6e06440d22ae53
           state: present
-          rules: "{{ item.sg_rules }}"
+          rules: "{{ item.rules }}"
   with_items: "{{ web_security_groups }}"
   register: web_sg
 
@@ -16,5 +16,5 @@
           region: "{{ vpc_region }}"
           state: present
           tags:
-              name: prudentialDevSG
+              Name: prudentialDevSG
   with_items: "{{ web_sg.results }}"

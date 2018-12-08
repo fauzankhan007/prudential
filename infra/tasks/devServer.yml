@@ -14,11 +14,4 @@
           instance_tags:
                   Name: prudential_dev
                   Environment: dev
-  register: web
-
-- name: wait for SSH to come up
-  delegate_to: "{{ item.public_ip }}"
-  wait_for_connection:
-          delay: 60
-          timeout: 600
-  with_items: "{{ web.instances }}"  
+  register: web  
