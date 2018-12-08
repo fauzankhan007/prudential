@@ -1,0 +1,5 @@
+image_id: ami-5b673c34
+key_name: prudential
+instance_type: t2.micro
+vpc_region: ap-south-1
+public_subnet: subnet-08ecee93ecf57abfc

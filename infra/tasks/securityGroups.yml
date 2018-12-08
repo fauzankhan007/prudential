@@ -1,0 +1,20 @@
+---
+- name: create web security group
+  ec2_group:
+          name: "{{ item.sg_name }}"
+          description: "{{ item.sg_description }}"
+          region: "{{ vpc_region }}"
+          vpc_id: vpc-02c6e06440d22ae53
+          state: present
+          rules: "{{ item.sg_rules }}"
+  with_items: "{{ web_security_groups }}"
+  register: web_sg
+
+- name: Tagging web security group
+  ec2_tag:
+          resource: "{{ item.group_id }}"
+          region: "{{ vpc_region }}"
+          state: present
+          tags:
+              name: prudentialDevSG
+  with_items: "{{ web_sg.results }}"
