@@ -1,5 +1,5 @@
 - name: Install Java and Jenkins
-  hosts: all
+  hosts: localhost
   become: yes
   become_method: sudo
   remote_user: ec2-user

@@ -1,4 +1,4 @@
-image_id: ami-5b673c34
+image_id: ami-0d773a3b7bb2bb1c1
 key_name: prudential
 instance_type: t2.micro
 vpc_region: ap-south-1

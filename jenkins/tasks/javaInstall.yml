@@ -1,11 +1,12 @@
 ---
 # tasks file for jenkins
 - name: upgrade all the packages
-  yum:
-      name: '*'
-      state: latest
+  apt:
+       update_cache: yes
+
 
 - name: Ensure java is installed
-  package:
-       name: java-1.8.0-openjdk
-       state: present
+  apt:
+       name: openjdk-8-jdk
+       state: latest
+       install_recommends: no
