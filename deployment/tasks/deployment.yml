@@ -1,0 +1,3 @@
+---
+- name: Install npm and deploy the emoji-search application
+  script: /etc/ansible/prudential/deployment/files/deployApp.sh
